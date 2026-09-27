@@ -1,6 +1,11 @@
-const test = require("node:test");
-const assert = require("node:assert");
+const express = require("express");
 
-test("basic test", () => {
-  assert.strictEqual(1 + 1, 2);
+const app = express();
+
+app.get("/", (req, res) => {
+  res.json({
+    message: "API is working",
+  });
 });
+
+module.exports = app;
